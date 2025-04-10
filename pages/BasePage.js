@@ -3,7 +3,7 @@ import { BrowserUtility } from '../utilities/BrowserUtility.js';
 
 export class BasePage {
 
-  /**
+/**
    * @param {import('playwright').Page} page
    */
   constructor(page) {

@@ -17,28 +17,54 @@ Feature: Click on the next button on payment plans page   #! Test Only
         And user has completed step one with valid information
         And user is on step two of the enrollment process
 
-
-    #TODO: Create scenarios that cover all the acceptance criteria
-
+   @sep16-1
    Scenario: verify that the next button is disabled by default
-        Given user is on the enrollment page
-        And user has completed step one with valid information
-        And user is on step two of the enrollment process
         Then the next button is disabled by default
 
-
+    @sep16-2
     Scenario: verify that the next button will be activated when user selects upfront payment option
-        Given user is on the enrollment page
-        And user has completed step one with valid information
-        And user is on step two of the enrollment process
         When user clicks upfront payment option
         Then the next button will be enabled
 
+    @sep16-3
     Scenario: verify that the next button will be activated when user selects installments payment option
-        Given user is on the enrollment page
-        And user has completed step one with valid information
-        And user is on step two of the enrollment process
-        When user clicks installments  payment option
+        When user clicks installments payment option
         Then the next button will be enabled
 
+    @sep16-4
+    Scenario: verify that after clicking on next button Step 3 page should be displayed
+        When user clicks installments payment option
+        Then the next button will be enabled
+        When user clicks next button
+        Then user should be redirected to step three of the enrollment process
 
+    @sep16-5
+    Scenario: verify that steps 1 and 2 should be green, and step 3 should be blue when landing on paymet page
+        When user clicks installments payment option
+        When user clicks next button
+        Then stepper one and two should be green
+        And step three should be blue
+
+    @sep16-6
+    Scenario: verify that the payment component is displayed
+        When user clicks installments payment option
+        When user clicks next button
+        Then payment component should be displayed
+
+    @sep16-7
+    Scenario: verify that the price summary is displayed
+        When user clicks installments payment option
+        When user clicks next button
+        Then price summary should be displayed
+
+    @sep16-8
+    Scenario: verify that the back button is displayed
+        When user clicks installments payment option
+        When user clicks next button
+        Then back button should be displayed
+
+    @sep16-9
+    Scenario: verify that by default, the pay button is displayed
+        When user clicks installments payment option
+        When user clicks next button
+        Then pay button should be displayed
