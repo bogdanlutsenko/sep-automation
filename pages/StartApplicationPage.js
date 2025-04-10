@@ -73,6 +73,7 @@ export class StartApplicationPage extends BasePage {
       "//div[contains(text(), 'Program Start Date')]/b[@class='info-value']"
     );
     this.refundEndDate = page.locator("(//b[@class='info-value'])[2]");
+    this.refundPolicy = page.locator("//span[@class='info-primary' and contains(text(), '100% refund')]");
     this.programNameOnInfoCard = page.locator(
       "//p[@class='program-title primary-color']"
     );
