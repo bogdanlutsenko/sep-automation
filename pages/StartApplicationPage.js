@@ -24,9 +24,9 @@ export class StartApplicationPage extends BasePage {
       "//input[@formcontrolname='lastName']"
     );
     this.emailInputBox = page.locator("//input[@formcontrolname='email']");
-    this.phoneNumberInputBox = page.locator(
-      "//input[@formcontrolname='phoneNumber']"
-    );
+    this.phoneNumberInputBox = page.locator("//input[@formcontrolname='phoneNumber']");
+    this.phoneNumberInputBoxHeaderText = page.locator(".//label[contains(@class,'mdc-floating-label') and .//mat-label[text()='Phone']]");
+    this.phoneNumberInputBoxHeaderText = page.locator("//mat-label[text()='Phone']/..");
     this.howDidYouHearAboutUsDropDown = page.locator(
       "//mat-label[text()='How did you hear about us?']"
     );
