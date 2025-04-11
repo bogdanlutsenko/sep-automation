@@ -13,6 +13,7 @@ export class PaymentPlanPage extends BasePage {
       "//span[@class='payment-type'][contains(text(),'Upfront')]"
     );
     this.upfrontPaymentAmount = page.locator("//span[@class='discount-price']");
+    this.upfrontPayOnceText = page.locator("//\*[@class='discount-price']//span[contains(., ' pay once')]");
     this.payOnceTextUpFront = page.locator(
       "//span[@class='discount-price']/span"
     );
@@ -128,6 +129,7 @@ export class PaymentPlanPage extends BasePage {
     this.step1 = page.locator("//div[@class='step-circle'][contains(.,'1')]");
     this.step2 = page.locator("//div[@class='step-circle'][contains(.,'2')]");
     this.step3 = page.locator("//div[@class='step-circle'][contains(.,'3')]");
-    this.UpfrontText = page.locator("//span[@class='payment-type']");
+    this.UpfrontText = page.locator("//span[@class='payment-type' and contains(text(),'Upfront')]");
+    this.InstallmentsText = page.locator("//span[@class='payment-type' and contains(text(),'5 Installments')]");
   }
 }
