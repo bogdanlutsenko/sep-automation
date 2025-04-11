@@ -110,6 +110,14 @@ export class PaymentPlanPage extends BasePage {
     this.activeNextButton = page.locator(
       "//button[@class = 'next-button' and text()='Next']"
     );
+
+    this.highlightedUpfrontSection = page.locator(
+      "//\*[@ng-reflect-ng-class = 'plan-selected' and @aria-controls = 'cdk-accordion-child-0']"
+    );
+    this.highlightedInstallmentsSection = page.locator(
+      "//\*[@ng-reflect-ng-class = 'plan-selected' and @aria-controls = 'cdk-accordion-child-1']"
+    );
+
     this.backButton = page.locator("//span[@class='back-button']");
     this.footerText = page.locator(
       "(//p[@class = 'footer-text' and contains(text(), 'Need help?')])[2]"
